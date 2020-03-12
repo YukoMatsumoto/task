@@ -3,21 +3,26 @@ class TasksController < ApplicationController
 
   # GET /tasks
   # GET /tasks.json
+  # 一覧
   def index
     @tasks = Task.all
+    @task = Task.new
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
+  # 詳細
   def show
   end
 
   # GET /tasks/new
   def new
+    @tasks = Task.all
     @task = Task.new
   end
 
   # GET /tasks/1/edit
+  # 変更
   def edit
   end
 
