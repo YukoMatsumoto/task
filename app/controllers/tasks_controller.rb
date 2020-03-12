@@ -17,7 +17,6 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @tasks = Task.all
     @task = Task.new
   end
 
