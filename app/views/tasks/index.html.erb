@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>タスクの一覧</h1>
+
+<table>
+  <%# <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead> %>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <ul>
+        <%# <td><%= task.title %>
+        <%# <td><%= task.body %>
+        <li><%= link_to task.title, task_path(task) %>
+        <%# <td><%= link_to '詳細', tasks_path %>
+        <%# <td><%= link_to '編集', edit_task_path(task) %>
+        | <%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<hr>
+
+<h2></h2>
+<%= render 'form', task: @task %>
+
+<%= link_to 'New Task', new_task_path %>
